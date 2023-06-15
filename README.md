@@ -31,4 +31,19 @@ class from(Gtk.window):
     
     Gtk_widget_show_all(mainwindow)
     Gtk_main();
+    from gi.repository import Gtk
+Window = Gtk.window 
+window.conect("delete event", Gtk.main_quit)
+Window.show_all()
+Gtk.main()
+
+class mainwindow(Gtk.window):
+    def__unit__(self, tittle = "button clicked 2.0")
+    self.button = Gtk.button(label ="play now")
+    self.button.conect("clicked", self.button_clicked)
+    self.add(self.button)
+    def button_clicked(self,witget)
+        print("gametime")
+ Gtk.window
+Window = mainwindow()
     return 0
