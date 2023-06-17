@@ -8,6 +8,10 @@
 ano1mo/ano1mo is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+import gi 
+gi.requiere_version("Gtk", "3.0")
+from gi.repository import Gtk
+
 class from(Gtk.window):
     def _unit_(self):
         super()._unit_(title="Juego") 
@@ -19,7 +23,7 @@ class from(Gtk.window):
     whiledone:
     for event in gi.event.get():
         if event.type == gi.QUIT:
-            done = True
+            done = True      
     box = Gtk_box_new(orientacion_vertical, 0 );        
     button = Gtk.Button(label="Mostrar Nombres")
    button.connect("clicked", self.on_button_clicked)
@@ -44,6 +48,22 @@ class mainwindow(Gtk.window):
        # Aquí se añadirá el código para mostrar los nombres seleccionados
     pass
 
+def guardar_puntajes(widget):
+    puntajes = []  # Ejemplo de lista de puntajes
+    puntajes_ordenados = sorted(puntajes, reverse=True)
+    print(puntajes_ordenados)
+
+button.connect("clicked", guardar_puntajes)
+
+button.start = gtk.button("star")
+start_button.connect("clicked", self.start_game)
+self, add(start_button)
+
+def start_game(self, widget):
+        # Aquí puedes agregar la lógica para iniciar el juego
+        print("El juego ha comenzado")
+
+
  Gtk.window
 Window = mainwindow()
-    return 0
+return 0
