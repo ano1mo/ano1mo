@@ -21,21 +21,17 @@ class from(Gtk.window):
         if event.type == gi.QUIT:
             done = True
     box = Gtk_box_new(orientacion_vertical, 0 );        
-    btnplayer = Gtk_button_new_with_label("Player")  
-    Gtk_conteiner_add(GTK_CONTAINER(mainwindow), btnplayer)
-   
-    Gtk_box_pack_start(GTK_BOX(box) , btnplayer, False, False, 0);
+    button = Gtk.Button(label="Mostrar Nombres")
+   button.connect("clicked", self.on_button_clicked)
+   box.pack_start(button, True, True, 0)
+   listbox = Gtk.ListBox()
+   box.pack_start(listbox, True, True, 0)
+   for nombre in nombres:
+       row = Gtk.ListBoxRow()
+       label = Gtk.Label(label=nombre)
+       row.add(label)
+       listbox.add(row)
 
-    g_signal_conect(object(mainwindow),"destroy", 
-                    callback(Gtk_main_quit),NULL)
-    
-    Gtk_widget_show_all(mainwindow)
-    Gtk_main();
-    from gi.repository import Gtk
-Window = Gtk.window 
-window.conect("delete event", Gtk.main_quit)
-Window.show_all()
-Gtk.main()
 
 class mainwindow(Gtk.window):
     def__unit__(self, tittle = "button clicked 2.0")
@@ -44,6 +40,10 @@ class mainwindow(Gtk.window):
     self.add(self.button)
     def button_clicked(self,witget)
         print("gametime")
+    def on_button_clicked(self, button):
+       # Aquí se añadirá el código para mostrar los nombres seleccionados
+    pass
+
  Gtk.window
 Window = mainwindow()
     return 0
